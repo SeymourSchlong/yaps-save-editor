@@ -1,0 +1,82 @@
+body, input, select {
+    font-family: MS Gothic;
+}
+
+#main {
+    display: block;
+    margin: auto;
+    border: 1px solid black;
+    width: 1200px;
+    padding: 50px;
+}
+
+.scrollable {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+#main > div, #container > div {
+    margin: 10px;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#container > div {
+    flex: 0 0 25%;
+    border: 2px inset gray;
+    padding: 20px;
+}
+
+#container .header {
+    border-bottom: 1px solid black;
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+}
+
+input[type="checkbox"] {
+    vertical-align: bottom;
+}
+
+.header {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#disks label {
+    justify-content: flex-start;
+    flex: 0 0 50%;
+    text-align: left;
+}
+
+#forms span {
+    flex: 0 0 50%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+}
+
+#enemies label {
+    justify-content: space-around;
+    
+    justify-content: flex-start;
+    flex: 0 0 20%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+}
+
+#disks .scrollable, #forms .scrollable, #enemies .scrollable {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+        <title>YAPS SAVE EDITOR (beta)</title>
+        <script type="text/javascript" src="main.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <meta property="og:image" content="https://seymourschlong.github.io/yaps-save-editor/assets/images/ico.png">
+        <link rel="icon" href="assets/images/ico.png">
+    </head>
+    <body onload="load()">
+        <div id="main">
+            <div class="header">You are Peter Shorts - Save editor</div>
+            <br>
+            <div id="upload-container">
+                <!-- button to upload save data -->
+                <input type="file" id="upload-save" accept=".dat"> <input type="submit" value="Submit" id="submit-save" disabled>
+            </div>
+            <div id="container" style="display: none;">
+                <div id="game">
+                    <div class="header">Game Save Info</div>
+                    <label>Difficulty: <select data-for="difficulty" id="difficulty-select">
+                        <option>Easy</option>
+                        <option>Normal</option>
+                        <option>Hard</option>
+                    </select></label>
+                    <br>
+                    <label>Death Count: <input type="number" data-for="deaths" min="0" max="999" step="1"></label>
+                    <!--<label>Disks Count: <input type="number" data-for="disks" min="0" max="25" step="1"></label>
+                    <label>Peter Count: <input type="number" data-for="sackcount" min="-99999" max="99999" step="1"></label>-->
+                    <br>
+                    <label>Custom: <input type="checkbox" data-for="custom" id="custom-enabled"></label>
+                    <label>Shuffle Enemies: <input type="checkbox" data-for="shuffle_enemies" id="shuffle-custom-enabled"></label>
+                    <label>Shuffle Items:  <input type="checkbox" data-for="shuffle_items" id="shuffle-item-enabled"></label>
+                    <label>Disks Required: <input type="number" data-for="disks_required" min="0" max="25" step="1"></label>
+                    <label>Random Seed: <input type="number" data-for="random_seed" min="0" max="9999" step="1"></label>
+                </div>
+                <div id="flags">
+                    <div class="header">Flags</div>
+                    <div class="scrollable">
+                        <label><input type="checkbox" data-for="scientist_boss"> Scientist Fought</label>
+                        <label><input type="checkbox" data-for="amalgam_boss"> Amalgam Fought</label>
+                        <br>
+                        <label><input type="checkbox" data-for="scene0"> Bug Cutscene</label>
+                        <label><input type="checkbox" data-for="scene1"> Trenchcoat Cutscene</label>
+                        <label><input type="checkbox" data-for="gargoyles"> Gargoyle Cutscene</label>
+                        <label><input type="checkbox" data-for="alien"> Alien Cutscene</label>
+                        <br>
+                        <label><input type="checkbox" data-for="beat"> Game Beaten</label>
+                    </div>
+                </div>
+                <div id="disks">
+                    <div class="header">Disks</div>
+                    <div style="display: flex;">
+                        <input id="mark-all-disk" type="button" value="set all found">
+                        <input id="mark-all-no-disk" type="button" value="set all unfound">
+                    </div>
+                    <br>
+                    <div class="scrollable"></div>
+                </div>
+                <div id="forms">
+                    <div class="header">Forms / Supers</div>
+                    <div class="scrollable"></div>
+                </div>
+                <div>
+                    <div class="header">Map</div>
+                    <!--<img src="./assets/images/peter_map.png">-->
+                    <input type="button" id="reveal-map" value="reveal whole map">
+                    <br>
+                    <br>
+                    Map is <span id="exploration">0</span>% explored.
+                    <br>
+                    <br>
+                    <label>Save location #<input type="number" value="0" data-for="savepoint" min="0" max="33" step="1"></label>
+                </div>
+                <div id="enemies">
+                    <div class="header">Enemies</div>
+                    <div style="display: flex;">
+                        <input id="mark-all-cap" type="button" value="set all captured">
+                        <input id="mark-all-no-cap" type="button" value="set all uncaptured">
+                    </div>
+                    <br>
+                    <div class="scrollable"></div>
+                </div>
+            </div>
+            <a id="saveLink" download="file_0.dat">
+                <input type="button" id="saveButton" value="Save!">
+            </a>
+        </div>
+    </body>
+</html>
