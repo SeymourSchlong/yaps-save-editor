@@ -215,6 +215,9 @@ const load = () => {
     const saveLink = document.querySelector('#saveLink');
 
     saveLink.addEventListener('click', () => {
+        saveInfo.sackcount = allEnemyBoxes.filter(input => input.checked).length;
+        saveInfo.disks = allDiskBoxes.filter(input => input.checked).length;
+
         const blob = new Blob([makeSave(saveInfo)], { type: 'text/plain' });
 
         saveLink.href = URL.createObjectURL(blob);
