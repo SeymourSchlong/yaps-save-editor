@@ -54,14 +54,17 @@ input[type="checkbox"] {
     justify-content: flex-start;
     flex: 0 0 50%;
     text-align: left;
+
+    flex-direction: row-reverse;
 }
 
 #forms span {
     flex: 0 0 50%;
     text-align: left;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     user-select: none;
+    flex-direction: row-reverse;
 }
 
 #enemies label {
@@ -71,8 +74,9 @@ input[type="checkbox"] {
     flex: 0 0 20%;
     text-align: left;
     display: flex;
-    justify-content: space-between;
     user-select: none;
+
+    flex-direction: row-reverse;
 }
 
 #disks .scrollable, #forms .scrollable, #enemies .scrollable {
